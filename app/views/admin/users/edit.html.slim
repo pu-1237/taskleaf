@@ -1,0 +1,8 @@
+h1= t('.edit_user')
+
+.nav.justify-content-end
+  = link_to t('.user_list'), admin_users_path, class: 'nav-link'
+
+= render partial: 'form', locals: { user: @user }
+
+

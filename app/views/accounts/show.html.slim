@@ -1,0 +1,15 @@
+h2= t('.account_information')
+
+table.table.table-hover
+  tbody
+    tr
+      th= User.human_attribute_name(:name)
+      td= @user.name
+    tr
+      th= User.human_attribute_name(:email)
+      td= @user.email
+    tr
+      th= User.human_attribute_name(:admin)
+      td= @user.admin? ? '〇' : '－'
+
+= link_to t('.edit'), edit_account_path(@account), class: 'btn btn-primary mr-3'

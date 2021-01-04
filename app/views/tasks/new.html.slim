@@ -1,0 +1,7 @@
+h1= t('.task_registration')
+
+.nav.justify-content-end
+  = link_to t('.task_list'), tasks_path, class: 'nav-link'
+
+= render partial: 'form', locals: {task: @task}
+

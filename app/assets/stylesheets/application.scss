@@ -1,0 +1,18 @@
+@import "bootstrap";
+
+.field_with_errors {
+    .form-control {
+      @extend .is-invalid;
+    }
+  }
+
+/* liから黒丸を消す　*/
+li{
+    list-style:none;
+}
+
+/* kaminariにbootstrapを設定する */
+.pagination {
+  justify-content: center;
+}
+
