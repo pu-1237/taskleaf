@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to tasks_path, notice: 'ログインしました。'
     else
-      render :new
+      redirect_to :login, alert: 'ログインに失敗しました。' # application.html.slimにalert表示を書き加えた
     end
   end
 

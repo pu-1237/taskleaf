@@ -1,9 +1,17 @@
 ---
 ja:
+  views:
+    pagination:
+      first: 最初
+      last: 最後
+      precious: 前
+      next: 次
+      truncate: ...
   tasks:
     index:
       task_list: タスク一覧
       sign_up: 新規登録
+      name: 名称
     show:
       task_detail: タスク詳細
       task_list: タスク一覧

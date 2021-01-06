@@ -84,6 +84,9 @@ gem 'bootstrap'
 # validatesメソッドにemailオプションを追加
 gem 'email_validator'
 
-# URL
+# URL表示
 gem 'rails_autolink'
+
+# 検索機能
+gem 'ransack'
 
