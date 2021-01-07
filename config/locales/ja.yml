@@ -74,6 +74,7 @@ ja:
         description: 詳細説明
         created_at: 登録日時
         updated_at: 更新日時
+        image: 画像
       user:
         name: ユーザー名
         email: メールアドレス

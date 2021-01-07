@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
     validates :name, presence: true, length: { maximum: 30 }
+    has_one_attached :image
 
     # オリジナル検証コード
     validate :validate_name_not_include_comma

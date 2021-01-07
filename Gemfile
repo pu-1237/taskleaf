@@ -28,7 +28,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -71,7 +71,7 @@ gem 'kaminari-i18n'
 # JQuery
 gem 'jquery-rails'
 
-# 画像の表示位置の入れ替え
+# 画像の並べ替え
 gem 'acts_as_list'
 
 # ビューを効率よく記述する
@@ -89,4 +89,3 @@ gem 'rails_autolink'
 
 # 検索機能
 gem 'ransack'
-

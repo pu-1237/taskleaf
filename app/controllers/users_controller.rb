@@ -9,6 +9,7 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
 
         if @user.save
+            UserMailer.creation_email(@user).deliver_now
             logger.debug "user: #{@user.attributes.inspect}"
             session[:user_id] = @user.id #セッションに:user_idをセットしてログイン状態を作る
             redirect_to tasks_path, notice: "ユーザー「#{@user.name}」を登録しました。"
