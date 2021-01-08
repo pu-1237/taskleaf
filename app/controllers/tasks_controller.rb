@@ -3,6 +3,16 @@ class TasksController < ApplicationController
   def index
     @q = current_user.tasks.ransack(params[:q])
     @tasks = @q.result(distinct: true).page(params[:page]).per(10)
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @tasks.generate_csv, filename: "tasks-#{Time.zone.now.strftime('%Y%m%d%S')}.csv" }
+    end
+
+    def import
+      current_user.tasks.import(params[:file])
+      redirect_to tasks_path, notice: "タスクを追加しました。"
+    end
   end
 
   def show

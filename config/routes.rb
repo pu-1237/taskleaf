@@ -9,7 +9,9 @@ Rails.application.routes.draw do
       resources :users
     end
 
-    resources :tasks
+    resources :tasks do
+      post :import, on: :collection
+    end
     resources :users
 
     resource :account, only:[:show, :edit, :update]
