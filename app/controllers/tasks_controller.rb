@@ -26,7 +26,7 @@ class TasksController < ApplicationController
     @task = current_user.tasks.new(task_params)
     if @task.save
       logger.debug "task: #{@task.attributes.inspect}"
-      redirect_to @task, notice: "タスク 「#{@task.name}」を登録しました。"
+      redirect_to tasks_path, notice: "タスク 「#{@task.name}」を登録しました。"
     else
       render :new
     end
@@ -41,9 +41,13 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task.destroy
-    redirect_to tasks_path, notice: "タスク「#{@task.name}」を削除しました。"
-
+    # 一覧画面と詳細画面で操作を変える
+    respond_to do |format|
+      if @task.destroy
+        format.html { redirect_to tasks_path, notice: "タスク「#{@task.name}」を削除しました。"}
+        format.json { head :no_content }
+      end
+    end
   end
 
   private

@@ -89,3 +89,6 @@ gem 'rails_autolink'
 
 # 検索機能
 gem 'ransack'
+
+# 非同期通信
+gem 'sidekiq', '~> 5.0'
