@@ -92,3 +92,5 @@ gem 'ransack'
 
 # 非同期通信
 gem 'sidekiq', '~> 5.0'
+
+gem 'webpacker'
