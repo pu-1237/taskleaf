@@ -13,3 +13,15 @@ User.find_or_create_by!(email: 'admin@example.com') do |user|
     user.password = 'password'
     user.password_confirmation = 'password'
 end
+
+User.all.each do |user|
+    if user.email = 'admin@example.com'
+        task = Task.create(
+            name: 'テスト',
+            description: 'ここに詳細を書く',
+            user_id: "#{user.id}"
+        )
+        # タスクに画像を添付する
+        task.image.attach(io: File.open('./app/assets/images/banana.jpg'), filename: 'banana.jpg')
+    end
+end
