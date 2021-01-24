@@ -45,7 +45,7 @@ class TasksController < ApplicationController
     respond_to do |format|
       if @task.destroy
         format.html { redirect_to tasks_path, notice: "タスク「#{@task.name}」を削除しました。"}
-        format.json { head :no_content }
+        format.js { head :no_content }
       end
     end
   end
